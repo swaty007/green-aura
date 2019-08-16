@@ -1,0 +1,271 @@
+@color-1: #AAD37A;
+@color-2: #EED09D;
+@color-3: #D87F27;
+@color-4: #841618;
+@color-5: #297770;
+@color-6: #FFCA5F;
+@color-7: #AC2024;
+@color-8: #596A63;
+@fade-organ: 50%;
+
+
+.site-main ul.products li.product {
+  display: none;
+  opacity: 0;
+}
+ul.products li.product .woocommerce-LoopProduct-link {
+  display: flex;
+  flex-direction: column;
+  max-width:100%;
+}
+ul.products li.product img {
+  display: inline;
+  order: 1;
+}
+ul.products li.product .woocommerce-loop-product__title,
+ul.products li.product h2, ul.products li.product h3 {
+  order: 0;
+}
+.ul.products li.product .button {
+  display: none!important;
+}
+ul.products li.product .price {
+  text-align: left;
+  order: 2;
+}
+ul.products li.product .button {
+  display: none;
+}
+
+.human-wrap {
+  position: relative;
+  display: inline-block;
+  //margin: 0 7.5% 8%;
+  margin: 0 6.5% 7%;
+  @media (min-width: 992px) {
+    float: left;
+    width: 48%;
+  }
+  .organ-click {
+    position: absolute;
+    width: 3.5%;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    cursor: pointer;
+    display: none;
+    .organ-click-fix {
+      padding-top: 169%;
+    }
+    img {
+      display: none;
+    }
+    &.image {
+      clip-path: unset;
+      background-color: transparent!important;
+      img {
+        max-width: 100%;
+        display: inline;
+      }
+      .organ-click-fix {
+        display: none;
+      }
+      &.five {
+        top: 51%;
+        left: 42%;
+        width: 16%;
+      }
+    }
+    &.one {
+      background-color: @color-1;
+      top: 21%;
+      left: 44%;
+    }
+    &.two {
+      background-color: @color-2;
+      top: 40%;
+      left: 47.5%;
+    }
+    &.three {
+      background-color: @color-3;
+      top: 44%;
+      left: 45%;
+    }
+    &.four {
+      background-color: @color-4;
+      top: 31%;
+      left: 17%;
+    }
+    &.five {
+      background-color: @color-5;
+      top: 54%;
+      left: 47.5%;
+    }
+    &.six {
+      background-color: @color-6;
+      top: 44%;
+      left: 50%;
+    }
+    &.seven {
+      background-color: @color-7;
+      top: 33%;
+      left: 52%;
+    }
+    &.eight {
+      background-color: @color-8;
+      top: 16%;
+      left: 47.5%;
+    }
+  }
+  .organ-block {
+    position: absolute;
+    width: 33%;
+    border-radius: 50%;
+    border: 2px solid #000;
+    //opacity: 0;
+    cursor: pointer;
+    transition: 0.3s all;
+    .organ-height-fix {
+      padding-top: 100%;
+      position: relative;
+      p {
+        margin: 0;
+      }
+      .organ-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-width: 68%;
+        max-height: 57%;
+        object-fit: contain;
+      }
+    }
+    .click {
+      bottom: 30%;
+      right: 31%;
+      position: absolute;
+      opacity: .0;
+      border: 17px solid rgba(55,161,72,.8);
+      border-radius: 50px;
+      display: inline-block;
+      text-align: center;
+      width: 39%;
+      max-width: 80px;
+      .click-child {
+        width: 100%;
+        padding-top: 100%;
+        background-color: rgba(55,161,72,.96);
+        border-radius: 50px;
+      }
+      &.do {
+        animation: pulsate .6s linear;
+        animation-iteration-count: 1;
+      }
+    }
+    &.show,&.show-fix {
+      opacity: 1;
+    }
+    &.one {
+      background-color: fade(@color-1, @fade-organ);
+      left: -4%;
+      top: 5%;
+    }
+    &.two {
+      background-color: fade(@color-2, @fade-organ);
+      left: -12%;
+      top: 34%;
+    }
+    &.three {
+      background-color: fade(@color-3, @fade-organ);
+      left: -4%;
+      bottom: 5%;
+    }
+    &.four {
+      background-color: fade(@color-4, @fade-organ);
+      left: 20%;
+      top: 79%;
+    }
+    &.five {
+      background-color: fade(@color-5, @fade-organ);
+      right: 20%;
+      top: 79%;
+    }
+    &.six {
+      background-color: fade(@color-6, @fade-organ);
+      right: -4%;
+      bottom: 5%;
+    }
+    &.seven {
+      background-color: fade(@color-7, @fade-organ);
+      right: -12%;
+      top: 34%;
+    }
+    &.eight {
+      background-color: fade(@color-8, @fade-organ);
+      right: -4%;
+      top: 5%;
+    }
+  }
+}
+
+.human-text-content {
+  @media (min-width: 992px) {
+    //display: inline-block;
+    float: left;
+    width: 39%;
+  }
+  .organ-text {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    transition: 0.3s all;
+    &.show {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+    .human-title {
+
+    }
+    .human-text {
+
+    }
+    &.one .human-title {
+      color: @color-1;
+    }
+    &.two .human-title {
+      color: @color-2;
+    }
+    &.three .human-title {
+      color: @color-3;
+    }
+    &.four .human-title {
+      color: @color-4;
+    }
+    &.five .human-title {
+      color: @color-5;
+    }
+    &.six .human-title {
+      color: @color-6;
+    }
+    &.seven .human-title {
+      color: @color-7;
+    }
+    &.eight .human-title {
+      color: @color-8;
+    }
+  }
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    -webkit-transform: scale(1.3, 1.3);
+    opacity: 0.0;
+  }
+}
