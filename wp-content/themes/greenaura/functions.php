@@ -439,3 +439,8 @@ function jk_woocommerce_available_variation( $args ) {
     $args['min_qty'] = 0; // Minimum value (variations)
     return $args;
 }
+
+add_filter( 'comment_text', 'remove_html_from_comments' );
+function remove_html_from_comments( $comment_text ) {
+    return htmlspecialchars($comment_text);
+}

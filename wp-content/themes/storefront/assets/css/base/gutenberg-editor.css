@@ -1,14 +1,5 @@
-/**
- * Base styles
- */
-.editor-block-list__block,
-.editor-default-block-appender textarea.editor-default-block-appender__content,
-.editor-post-title__block .editor-post-title__input {
-  font-family: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
-
-.editor-block-list__block,
-.editor-block-list__block p,
-.editor-default-block-appender textarea.editor-default-block-appender__content {
+body {
+  font-family: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 16px;
   line-height: 1.618; }
 
@@ -29,6 +20,7 @@
 
 .editor-post-title__block .editor-post-title__input {
   clear: both;
+  font-family: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   font-size: 2.617924em;
   line-height: 1.214;
@@ -277,3 +269,24 @@ ul.wp-block-latest-posts {
     height: 2px; }
     .wp-block .wp-block-separator:not(.is-style-dots) {
       height: 1px; }
+
+.wc-block-grid__products .wc-block-grid__product .wp-block-button__link {
+  color: #333333; }
+
+.wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-onsale {
+  border: 1px solid;
+  border-color: #43454b;
+  color: #43454b;
+  padding: 0.202em 0.6180469716em;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1em;
+  border-radius: 3px;
+  position: relative; }
+
+.wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-title {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000000; }
