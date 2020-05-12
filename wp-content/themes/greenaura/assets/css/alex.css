@@ -14,7 +14,7 @@
     position: absolute;
     z-index: 1000;
     width: 22%;
-    background-size: 100% auto!important;
+    background-size: 100.1% auto!important;
 }
 @media(min-width:768px) {
     .romb-layout{
@@ -753,4 +753,11 @@ ol, ul  {
 hr.line-footer {
     margin-right: 4%;
     border-color: #CFCFCF;
+}
+
+.woocommerce-pagination .page-numbers {
+    display: flex;
+}
+.woocommerce-breadcrumb .breadcrumb-separator {
+    padding: 0 20px;
 }
