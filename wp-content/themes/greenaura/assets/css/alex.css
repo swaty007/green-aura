@@ -754,10 +754,3 @@ hr.line-footer {
     margin-right: 4%;
     border-color: #CFCFCF;
 }
-
-.woocommerce-pagination .page-numbers {
-    display: flex;
-}
-.woocommerce-breadcrumb .breadcrumb-separator {
-    padding: 0 20px;
-}
