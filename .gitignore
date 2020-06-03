@@ -98,3 +98,4 @@ wp-content/*
 !wp-content/themes/storefront/
 !wp-content/themes/greenaura/*
 !wp-content/themes/storefront/*
+!ads.txt
