@@ -14,7 +14,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<?php if (rand(0,5) === 5):?>
+    <script data-ad-client="ca-pub-7558972045892090" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<?php endif;?>
 <?php wp_head(); ?>
 </head>
 
