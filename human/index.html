@@ -243,88 +243,93 @@
     }
 </style>
 <script type="text/javascript">
-    jQuery.noConflict();
-    (function ($) {
-
-        var human_product_data = [
-            { id:1316,title:'Масло горчицы желтой', text: 'Живой продукт и прекрасное средство от множества недугов! Применяется при проблемах с пищеварением, обменом веществ, болезнях сердца и сосудов.'},
-            { id:1312,title:'Масло грецкого ореха', text: 'Удачный выбор, которым вы принесёте огромную пользу своему организму! Профилактика злокачественных образований, астмы, а также хороший афродизиак.'},
-            { id:1308,title:'Масло Конопли', text: 'Замечательный выбор человека, вставшего на путь оздоровления! Применяется при анемии, радикулите, неврозах, болезнях верхних дыхательных путей, онкологии.'},
-            { id:1304,title:'Масло Расторопши', text: 'Невероятной силы натуральный целебный продукт! Исцелит и защитит печень, поможет при проблемах с ЖКТ, женских заболеваниях, бесплодии.   '},
-            { id:1300,title:'Амарантовое масло', text: 'Прекрасное вложение в ваше здоровье и путь к омоложению! Эффективно при лечении болезней ЖКТ и сердечно-сосудистой системы.'},
-            { id:1296,title:'Черный Тмин', text: 'Удивительный продукт с длинным перечнем целительных свойств! Способен укрепить наш иммунитет, помочь как при утомлении и простуде, так и при бесплодии, диабете и даже раке.'},
-            { id:1292,title:'Масло кунжутное', text: 'Неоспоримый источник здоровья и хорошего самочувствия! Рекомендовано при онкологии, заболеваниях мочеполовой системы, суставов, нервной системы.'},
-            { id:1288,title:'Масло тыквенное', text: 'Отличный выбор человека, заботящегося о своём здоровье! Рекомендуется при заболеваниях печени, желудка, глазных болезнях.'},
-            { id:1284,title:'Масло подсолнечное', text: 'Замечательный продукт, сохраняющий все полезные свойства семян подсолнечника! Профилактика и лечение инфарктов, тромбофлебита, болезней ЖКТ.'},
-            { id:1270,title:'Масло льняное', text: 'Незаменимый помощник в борьбе со множеством недугов! Противостоит грибкам и глистам, заболеваниям печени и желудка, предотвращает тромбообразование.'},
-            { id:1387,title:'Рыжиковое масло', text: 'Редкий гость прилавков, но чрезвычайно полезный продукт! Оказывает благотворное влияние на сердечно-сосудистую систему, печень, кожу.'},
-            { id:1382,title:'Масло Чиа', text: 'Отличный выбор и путь к здоровой жизни! Эффективно против женских болезней, заболеваний дыхательных путей, мигрени, нервном расстройстве.'},
-        ];
-
-        var product_list = $('#human-section ul.products');
-
-        human_product_data.forEach(function(values, item) {
-            product_list.find('.post-'+String(values.id)+' .price').html(values.text);
-        });
-
-        $(document).on('click', "#human-wrap .organ-click", function (e) {
-            let id = this.id;
-            let block_n = id.substr(-1);
-            $('#human-text-content #organ-text-'+block_n).toggleClass('show');
-            $(this).next().toggleClass("show-fix");
-        });
-
-        $(document).on('mouseenter mouseleave', "#human-wrap .organ-click", function (e) {
-            $(this).next().toggleClass("show");
-        });
+    document.addEventListener("DOMContentLoaded", function () {
+        (function ($) {
 
 
-        $(document).on('click', "#human-wrap .organ-block", function (e) {
-            let id = $(this).prev().prop('id');
-            let block_n = id.substr(-1);
-            $('#human-text-content .organ-text').removeClass('show');
-            $('#human-text-content #organ-text-'+block_n).addClass('show');
 
-            var data = [];
-            switch (Number(block_n)) {
-                case 1:data = [1308,1284,1316]; //глаза
-                    break;
-                case 2:data = [1270,1308,1288,1312,1316]; //желудок
-                    break;
-                case 3:data = [1304,1270,1288]; //печень
-                    break;
-                case 4:data = [1300,1308,1296]; //кровеносная система
-                    break;
-                case 5:data = [1288,1312,1300,1296]; //половая система
-                    break;
-                case 6:data = [1270,1288,1387]; //почки
-                    break;
-                case 7:data = [1270,1284,1292,1288]; //сердце
-                    break;
-                case 8:data = [1312,1270,1292,1284]; //мозг
-                    break;
-            }
+            var human_product_data = [
+                { id:1316,title:'Масло горчицы желтой', text: 'Живой продукт и прекрасное средство от множества недугов! Применяется при проблемах с пищеварением, обменом веществ, болезнях сердца и сосудов.'},
+                { id:1312,title:'Масло грецкого ореха', text: 'Удачный выбор, которым вы принесёте огромную пользу своему организму! Профилактика злокачественных образований, астмы, а также хороший афродизиак.'},
+                { id:1308,title:'Масло Конопли', text: 'Замечательный выбор человека, вставшего на путь оздоровления! Применяется при анемии, радикулите, неврозах, болезнях верхних дыхательных путей, онкологии.'},
+                { id:1304,title:'Масло Расторопши', text: 'Невероятной силы натуральный целебный продукт! Исцелит и защитит печень, поможет при проблемах с ЖКТ, женских заболеваниях, бесплодии.   '},
+                { id:1300,title:'Амарантовое масло', text: 'Прекрасное вложение в ваше здоровье и путь к омоложению! Эффективно при лечении болезней ЖКТ и сердечно-сосудистой системы.'},
+                { id:1296,title:'Черный Тмин', text: 'Удивительный продукт с длинным перечнем целительных свойств! Способен укрепить наш иммунитет, помочь как при утомлении и простуде, так и при бесплодии, диабете и даже раке.'},
+                { id:1292,title:'Масло кунжутное', text: 'Неоспоримый источник здоровья и хорошего самочувствия! Рекомендовано при онкологии, заболеваниях мочеполовой системы, суставов, нервной системы.'},
+                { id:1288,title:'Масло тыквенное', text: 'Отличный выбор человека, заботящегося о своём здоровье! Рекомендуется при заболеваниях печени, желудка, глазных болезнях.'},
+                { id:1284,title:'Масло подсолнечное', text: 'Замечательный продукт, сохраняющий все полезные свойства семян подсолнечника! Профилактика и лечение инфарктов, тромбофлебита, болезней ЖКТ.'},
+                { id:1270,title:'Масло льняное', text: 'Незаменимый помощник в борьбе со множеством недугов! Противостоит грибкам и глистам, заболеваниям печени и желудка, предотвращает тромбообразование.'},
+                { id:1387,title:'Рыжиковое масло', text: 'Редкий гость прилавков, но чрезвычайно полезный продукт! Оказывает благотворное влияние на сердечно-сосудистую систему, печень, кожу.'},
+                { id:1382,title:'Масло Чиа', text: 'Отличный выбор и путь к здоровой жизни! Эффективно против женских болезней, заболеваний дыхательных путей, мигрени, нервном расстройстве.'},
+            ];
 
-            product_list.children().filter(function (index) {
-                var classArr = [...this.classList];
-                const isWordIncluded = (base, key) => base.toLowerCase().includes(key.toLowerCase());
-                const includesKeywords = classArr.some(class_name => data.some(word => isWordIncluded(class_name, String(word)) ));
-                if (includesKeywords) {
-                    $(this).show(300).css('display','flex');
-                } else {
-                    $(this).hide();
-                }
+            var product_list = $('#human-section ul.products');
+
+            human_product_data.forEach(function(values, item) {
+                product_list.find('.post-'+String(values.id)+' .price').html(values.text);
             });
 
-        });
-        setTimeout(function () {
-            $('.organ-block.one .click').addClass('do');
-            setTimeout(function () {
-                $('.organ-block.one').click();
-            },500);
-        },300);
 
-    })(jQuery);
+            $(document).on('click', "#human-wrap .organ-click", function (e) {
+                let id = this.id;
+                let block_n = id.substr(-1);
+                $('#human-text-content #organ-text-'+block_n).toggleClass('show');
+                $(this).next().toggleClass("show-fix");
+            });
+
+            $(document).on('mouseenter mouseleave', "#human-wrap .organ-click", function (e) {
+                $(this).next().toggleClass("show");
+            });
+
+
+            $(document).on('click', "#human-wrap .organ-block", function (e) {
+                let id = $(this).prev().attr('id');
+                let block_n = id.substr(-1);
+                $('#human-text-content .organ-text').removeClass('show');
+                $('#human-text-content #organ-text-'+block_n).addClass('show');
+
+                var data = [];
+                switch (Number(block_n)) {
+                    case 1:data = [1308,1284,1316]; //глаза
+                        break;
+                    case 2:data = [1270,1308,1288,1312,1316]; //желудок
+                        break;
+                    case 3:data = [1304,1270,1288]; //печень
+                        break;
+                    case 4:data = [1300,1308,1296]; //кровеносная система
+                        break;
+                    case 5:data = [1288,1312,1300,1296]; //половая система
+                        break;
+                    case 6:data = [1270,1288,1387]; //почки
+                        break;
+                    case 7:data = [1270,1284,1292,1288]; //сердце
+                        break;
+                    case 8:data = [1312,1270,1292,1284]; //мозг
+                        break;
+                }
+                product_list.children().filter(function (index) {
+                    var classArr = [...this.classList];
+                    const isWordIncluded = (base, key) => base.toLowerCase().includes(key.toLowerCase());
+                    const includesKeywords = classArr.some(class_name => data.some(word => isWordIncluded(class_name, String(word)) ));
+                    if (includesKeywords) {
+                        $(this).show().css('display','flex');
+                    } else {
+                        $(this).hide();
+                    }
+                })
+            });
+            setTimeout(function () {
+                $('.organ-block.one .click').addClass('do');
+                setTimeout(function () {
+                    $('.organ-block.one').click();
+                },500);
+            },300);
+
+
+
+
+        })(jQuery);
+    })
 </script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

@@ -89,7 +89,7 @@ function edit_html_tags_in_comments() {
 }
 
 
-add_action( 'wp_enqueue_scripts', 'my_jquery_cdn_method', 1);
+//add_action( 'wp_enqueue_scripts', 'my_jquery_cdn_method', 1);
 function my_jquery_cdn_method() {
     // получаем версию jQuery
     wp_enqueue_script( 'jquery' );
